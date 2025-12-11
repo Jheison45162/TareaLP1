@@ -1,0 +1,139 @@
+/* === ESTILO GLOBAL PARA LOGIN / REGISTRO === */
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: radial-gradient(circle at top, #1f1f1f 0%, #0d0d0d 100%);
+  margin: 0;
+  padding: 0;
+  color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Luz animada */
+body::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
+  animation: rotarLuz 14s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotarLuz {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* === BOTÓN VOLVER AL INICIO === */
+.btn-volver {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 8px 15px;
+  background: rgba(255,255,255,0.10);
+  color: #ffb89a;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: 0.3s ease;
+  z-index: 2;
+}
+
+.btn-volver:hover {
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(255,112,67,0.6);
+  transform: scale(1.05);
+}
+
+/* === CONTENEDOR CENTRAL === */
+.auth-container {
+  width: 90%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 35px;
+  border-radius: 18px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 25px rgba(255, 112, 67, 0.5);
+  text-align: center;
+  animation: aparecer 0.5s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* Título */
+.auth-container h2 {
+  margin: 0 0 25px;
+  color: #ffb89a;
+  font-size: 1.8rem;
+  text-shadow: 0 0 12px rgba(255, 112, 67, 0.6);
+}
+
+/* Inputs */
+.auth-container input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  outline: none;
+  font-size: 1rem;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  transition: 0.3s ease;
+}
+
+.auth-container input:focus {
+  background: rgba(255,255,255,0.25);
+  box-shadow: 0 0 18px rgba(255,255,255,0.35);
+}
+
+/* Botón */
+.auth-container button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  background: linear-gradient(135deg, #ff7043, #ff3d00);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.auth-container button:hover {
+  background: linear-gradient(135deg, #ff5722, #ff7043);
+  transform: scale(1.03);
+}
+
+/* Link inferior */
+.auth-container .link {
+  display: block;
+  margin-top: 15px;
+  color: #ffb89a;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.auth-container .link:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255,112,67,0.8);
+}
+
+@keyframes aparecer {
+  from { transform: scale(0.85); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
